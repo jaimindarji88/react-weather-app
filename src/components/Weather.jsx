@@ -38,7 +38,6 @@ var Weather = React.createClass({
 				<WeatherMessage temp={temp} location={location}/>
 			)
 		}
-		console.log(message)
 		return (
 			<div>
 				<h3>Get Weather</h3>
