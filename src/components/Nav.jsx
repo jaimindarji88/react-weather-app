@@ -1,15 +1,47 @@
 import React from 'react'
 import {Link, IndexLink} from 'react-router'
+import {
+	TopBar, TopBarLeft, TopBarRight, Menu, MenuItem, MenuText
+} from 'react-foundation'
 
-var Nav = (props)=>{
-	return(
-		<div>
-			<h2>Nav Comp</h2>
-			<IndexLink to="/" activeClassName="active" activeStyle={{fontWeight:"Bold"}}>Get Weather</IndexLink>
-			<Link to="/about" activeClassName="active" activeStyle={{fontWeight:"Bold"}}>Get About</Link>
-			<Link to="/examples" activeClassName="active" activeStyle={{fontWeight:"Bold"}}>Get Examples</Link>
-		</div>
-	)
-}
+var Nav = React.createClass({
+	onSearch: function(e){
+		e.preventDefault();
+
+		alert('asd')
+	},
+	render:function(){
+		return (
+			<TopBar>
+				<TopBarLeft>
+					<Menu>
+						<MenuText>React Weather App</MenuText>
+						<MenuItem>
+							<IndexLink to="/" activeClassName="active" activeStyle={{fontWeight:"Bold"}}>Weather</IndexLink>
+						</MenuItem>
+						<MenuItem>
+							<Link to="/about" activeClassName="active" activeStyle={{fontWeight:"Bold"}}>About</Link>
+						</MenuItem>
+						<MenuItem>
+							<Link to="/examples" activeClassName="active" activeStyle={{fontWeight:"Bold"}}>Examples</Link>
+						</MenuItem>
+					</Menu>
+				</TopBarLeft>
+			    <TopBarRight>
+					<form onSubmit={this.onSearch}>
+						<Menu>
+							<MenuItem>
+								<input type="search" placeholder="Search Weather" />
+							</MenuItem>
+							<MenuItem>
+								<input className="button" type="submit" value="Get Weather" />
+							</MenuItem>
+						</Menu>
+					</form>
+				</TopBarRight>
+			</TopBar>
+		)
+	}
+});
 
 module.exports = Nav;
