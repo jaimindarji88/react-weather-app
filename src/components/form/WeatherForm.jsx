@@ -1,4 +1,5 @@
 import React from 'react'
+import {Button, Colors} from 'react-foundation'
 
 var WeatherForm = React.createClass({
 	onFormSubmit:function(e){
@@ -15,7 +16,7 @@ var WeatherForm = React.createClass({
 			<div>
 				<form onSubmit={this.onFormSubmit}>
 					<input type='text' ref='location'/>
-					<button>Get Weather</button>
+					<Button color={Colors.PRIMARY} isHollow isExpanded>Get Weather</Button>
 				</form>
 			</div>
 		)
