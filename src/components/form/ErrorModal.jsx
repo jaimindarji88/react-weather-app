@@ -1,19 +1,21 @@
 import React from 'react'
-import $ from 'jquery'
-import {Button, Colors} from 'react-foundation'
 
 var ErrorModal = React.createClass({
-	componentDidMount:function(){
-		
+	propTypes:{
+		title: React.PropTypes.string,
+		message: React.PropTypes.string.isRequired
+	},
+	getDefaultProps: function(){
+		return {
+			title: 'Error'
+		}
 	},
 	render: function(){
+		var {title, message} = this.props
 		return (
-			<div id="error-modal" className="reveal tiny text-center" data-reveal>
-				<h4>Errorrrrr</h4>
-				<p>Errorrr message</p>
-				<p>
-					<Button color={Colors.PRIMARY} isHollow isExpanded data-close>Okay</Button>
-				</p>
+			<div id="error-modal" className="text-center">
+				<h4>{title}</h4>
+				<p>{message}</p>
 			</div>
 		)
 	}
