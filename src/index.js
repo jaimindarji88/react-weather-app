@@ -9,7 +9,7 @@ import Examples from './components/Examples'
 // Load foundation
 import 'foundation-sites/dist/foundation.min.css';
 // Custom css
-import './styles/index.css'
+import './styles/index.sass'
 
 ReactDOM.render(
   <Router history={hashHistory}>
